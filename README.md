@@ -78,12 +78,15 @@ paths to `index.html` — `netlify.toml`, `public/_redirects` and
 
 ## Before going live — checklist
 
-- [ ] **Real contact details** — `src/config/site.js` currently has
-      **placeholder** phone/WhatsApp/email values. Replace `phoneDisplay`,
-      `phoneHref`, `whatsappNumber` and `email` with the real business
-      numbers before launch.
-- [ ] **Real team/founder info** — `src/pages/About.jsx` currently describes
-      the team generically. Add real tutor bios/credentials once available.
+- [x] **Phone / WhatsApp** — `src/config/site.js` intentionally reuses the
+      real Biology Mentor number as a shared business line.
+- [ ] **Real email** — `email` in `src/config/site.js` is still a
+      **placeholder** (`info@highachievers.ae`). Replace once a real inbox
+      exists.
+- [ ] **Real team/founder info** — `src/data/team.js` currently ships
+      **dummy** tutor profiles (names, photos-as-initials, experience) as
+      placeholders. Replace with real bios, credentials and photos before
+      launch.
 - [ ] **Real testimonials** — `src/data/testimonials.js` ships with
       illustrative quotes standing in for real ones. Replace them with
       genuine, permissioned parent/student feedback before launch —

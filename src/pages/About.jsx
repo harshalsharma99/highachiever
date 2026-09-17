@@ -4,7 +4,10 @@ import { Target, HeartHandshake, ShieldCheck, Layers } from 'lucide-react';
 import PageHero from '@/components/shared/PageHero';
 import CTASection from '@/components/shared/CTASection';
 import { siteConfig } from '@/config/site';
+import { TEAM } from '@/data/team';
 import { useDocumentMeta } from '@/lib/useDocumentMeta';
+
+const AVATAR_COLORS = ['#F5B942', '#2FC9B0', '#EFA92B', '#1FA98F', '#F5B942', '#2FC9B0'];
 
 const VALUES = [
   {
@@ -93,13 +96,43 @@ export default function About() {
       </section>
 
       <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-5 md:px-8 max-w-3xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#0B1220] mb-5">Our team</h2>
-          <p className="text-[#4B5566] leading-relaxed">
-            High Achievers is built around a team of subject-matter specialists, each experienced in the specific
-            curriculum and exam board they teach &mdash; from IGCSE and A-Level examiners&rsquo; mark schemes to CBSE
-            NCERT depth and IB assessment criteria. Full tutor profiles are coming soon &mdash; get in touch and
-            we&rsquo;ll match you with the right specialist for your child’s curriculum and goals.
+        <div className="container mx-auto px-5 md:px-8">
+          <div className="max-w-2xl mx-auto text-center mb-14">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-[#0B1220] mb-4">Meet the team</h2>
+            <p className="text-[#4B5566] leading-relaxed">
+              High Achievers is built around a team of subject-matter specialists, each experienced in the specific
+              curriculum and exam board they teach.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {TEAM.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="bg-[#F7F9FC] border border-[#E4E9F0] rounded-2xl p-6"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center text-[#0B1220] font-heading font-bold text-lg flex-shrink-0"
+                    style={{ backgroundColor: AVATAR_COLORS[index % AVATAR_COLORS.length] }}
+                  >
+                    {member.initials}
+                  </div>
+                  <div>
+                    <p className="font-heading font-bold text-[#0B1220] leading-tight">{member.name}</p>
+                    <p className="text-sm text-[#1FA98F] font-medium">{member.experience} experience</p>
+                  </div>
+                </div>
+                <p className="text-sm font-semibold text-[#0B1220] mb-2">{member.role}</p>
+                <p className="text-sm text-[#4B5566] leading-relaxed">{member.bio}</p>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-[#8993A6] mt-8">
+            Profiles shown are illustrative placeholders pending real tutor bios and photos.
           </p>
         </div>
       </section>

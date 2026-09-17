@@ -26,4 +26,16 @@ export const TESTIMONIALS = [
     name: 'Parent of Year 12 student',
     context: 'SAT / University Entrance, Abu Dhabi',
   },
+  {
+    quote:
+      "My son cracked the NEET Biology section with real confidence. The rapid-recall techniques and mock tests made all the difference in his rank.",
+    name: 'Parent of Class 12 student',
+    context: 'NEET Biology, Dubai',
+  },
+  {
+    quote:
+      'The Olympiad training pushed her well beyond the school syllabus. She qualified for the next round and genuinely enjoys the harder problems now.',
+    name: 'Parent of Year 8 student',
+    context: 'Maths Olympiad, Sharjah',
+  },
 ];
